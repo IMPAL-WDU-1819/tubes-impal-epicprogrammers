@@ -9,7 +9,7 @@ CREATE TABLE Employee (
   pass string NOT NULL ,
   address string NOT NULL ,
   nama string NOT NULL ,
-  user string NOT NULL ,
+  username string NOT NULL ,
   notel numeric NOT NULL ,
   lastLogin date NOT NULL 
 );
