@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "8d19439ef22c432fe18f0eac697c8789fe30c00a"
+    "signature": "9c02429621686a386327df536537fec2d1d311f9"
   },
   "compilationOptions": {
     "defines": [
@@ -25,13 +25,49 @@
       "site/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.App": "2.1.1",
-          "Microsoft.NETCore.App": "2.1.0"
+          "Microsoft.AspNetCore.Authentication.Cookies": "2.1.2",
+          "Microsoft.NETCore.App": "2.1.0",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.1.1.1"
         },
         "runtime": {
           "site.dll": {}
         },
         "compile": {
           "site.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Authentication/2.1.2": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.Core": "2.1.1",
+          "Microsoft.AspNetCore.DataProtection": "2.1.1",
+          "Microsoft.AspNetCore.Http": "2.1.1",
+          "Microsoft.AspNetCore.Http.Extensions": "2.1.1",
+          "Microsoft.Extensions.Logging.Abstractions": "2.1.1",
+          "Microsoft.Extensions.Options": "2.1.1",
+          "Microsoft.Extensions.WebEncoders": "2.1.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.dll": {
+            "assemblyVersion": "2.1.2.0",
+            "fileVersion": "2.1.2.18207"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Cookies/2.1.2": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication": "2.1.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.Cookies.dll": {
+            "assemblyVersion": "2.1.2.0",
+            "fileVersion": "2.1.2.18207"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.Cookies.dll": {}
         }
       },
       "Microsoft.NETCore.App/2.1.0": {
@@ -205,6 +241,40 @@
           "Microsoft.NETCore.Platforms": "2.1.0"
         }
       },
+      "Npgsql/4.0.2": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.1",
+          "System.Threading.Tasks.Extensions": "4.5.1",
+          "System.ValueTuple": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Npgsql.dll": {
+            "assemblyVersion": "4.0.2.0",
+            "fileVersion": "4.0.2.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Npgsql.dll": {}
+        }
+      },
+      "Npgsql.EntityFrameworkCore.PostgreSQL/2.1.1.1": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.1.1",
+          "Microsoft.EntityFrameworkCore.Abstractions": "2.1.1",
+          "Microsoft.EntityFrameworkCore.Relational": "2.1.1",
+          "Npgsql": "4.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
+            "assemblyVersion": "2.1.1.1",
+            "fileVersion": "2.1.1.1"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {}
+        }
+      },
+      "System.ValueTuple/4.5.0": {},
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "dependencies": {
           "Newtonsoft.Json": "11.0.2",
@@ -257,9 +327,9 @@
           "Microsoft.AspNet.WebApi.Client": "5.2.6",
           "Microsoft.AspNetCore": "2.1.1",
           "Microsoft.AspNetCore.Antiforgery": "2.1.1",
-          "Microsoft.AspNetCore.Authentication": "2.1.1",
+          "Microsoft.AspNetCore.Authentication": "2.1.2",
           "Microsoft.AspNetCore.Authentication.Abstractions": "2.1.1",
-          "Microsoft.AspNetCore.Authentication.Cookies": "2.1.1",
+          "Microsoft.AspNetCore.Authentication.Cookies": "2.1.2",
           "Microsoft.AspNetCore.Authentication.Core": "2.1.1",
           "Microsoft.AspNetCore.Authentication.Facebook": "2.1.1",
           "Microsoft.AspNetCore.Authentication.Google": "2.1.1",
@@ -401,21 +471,6 @@
         },
         "compileOnly": true
       },
-      "Microsoft.AspNetCore.Authentication/2.1.1": {
-        "dependencies": {
-          "Microsoft.AspNetCore.Authentication.Core": "2.1.1",
-          "Microsoft.AspNetCore.DataProtection": "2.1.1",
-          "Microsoft.AspNetCore.Http": "2.1.1",
-          "Microsoft.AspNetCore.Http.Extensions": "2.1.1",
-          "Microsoft.Extensions.Logging.Abstractions": "2.1.1",
-          "Microsoft.Extensions.Options": "2.1.1",
-          "Microsoft.Extensions.WebEncoders": "2.1.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.dll": {}
-        },
-        "compileOnly": true
-      },
       "Microsoft.AspNetCore.Authentication.Abstractions/2.1.1": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Abstractions": "2.1.1",
@@ -424,15 +479,6 @@
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.Abstractions.dll": {}
-        },
-        "compileOnly": true
-      },
-      "Microsoft.AspNetCore.Authentication.Cookies/2.1.1": {
-        "dependencies": {
-          "Microsoft.AspNetCore.Authentication": "2.1.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.Cookies.dll": {}
         },
         "compileOnly": true
       },
@@ -467,7 +513,7 @@
       },
       "Microsoft.AspNetCore.Authentication.JwtBearer/2.1.1": {
         "dependencies": {
-          "Microsoft.AspNetCore.Authentication": "2.1.1",
+          "Microsoft.AspNetCore.Authentication": "2.1.2",
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "5.2.0"
         },
         "compile": {
@@ -486,7 +532,7 @@
       },
       "Microsoft.AspNetCore.Authentication.OAuth/2.1.1": {
         "dependencies": {
-          "Microsoft.AspNetCore.Authentication": "2.1.1",
+          "Microsoft.AspNetCore.Authentication": "2.1.2",
           "Newtonsoft.Json": "11.0.2"
         },
         "compile": {
@@ -515,7 +561,7 @@
       },
       "Microsoft.AspNetCore.Authentication.WsFederation/2.1.1": {
         "dependencies": {
-          "Microsoft.AspNetCore.Authentication": "2.1.1",
+          "Microsoft.AspNetCore.Authentication": "2.1.2",
           "Microsoft.IdentityModel.Protocols.WsFederation": "5.2.0",
           "System.IdentityModel.Tokens.Jwt": "5.2.0"
         },
@@ -818,7 +864,7 @@
       },
       "Microsoft.AspNetCore.Identity/2.1.1": {
         "dependencies": {
-          "Microsoft.AspNetCore.Authentication.Cookies": "2.1.1",
+          "Microsoft.AspNetCore.Authentication.Cookies": "2.1.2",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "2.1.1",
           "Microsoft.AspNetCore.Hosting.Abstractions": "2.1.1",
           "Microsoft.Extensions.Identity.Core": "2.1.1"
@@ -1451,7 +1497,7 @@
           "System.Threading.Tasks": "4.3.0",
           "System.Threading.Tasks.Parallel": "4.3.0",
           "System.Threading.Thread": "4.3.0",
-          "System.ValueTuple": "4.3.0",
+          "System.ValueTuple": "4.5.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XDocument": "4.3.0",
           "System.Xml.XPath.XDocument": "4.3.0",
@@ -3038,14 +3084,6 @@
         },
         "compileOnly": true
       },
-      "System.ValueTuple/4.3.0": {
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0"
-        },
-        "compileOnly": true
-      },
       "System.Xml.ReaderWriter/4.3.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -3156,6 +3194,20 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Microsoft.AspNetCore.Authentication/2.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MXbDTincCKqkrrMF5P8nhjvmXA1yL1mHj8yPJ32wfBkfkLZfV0EhIp/MGKupiVyqsAhjAk0NL9cPslcyvBsQkg==",
+      "path": "microsoft.aspnetcore.authentication/2.1.2",
+      "hashPath": "microsoft.aspnetcore.authentication.2.1.2.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Cookies/2.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-anyHJ9EcW//s35943Wg0YXfRbAd5ZkxaPkBQYlta7oy1NnmKGs/ghe7IsqUUTYPzIWRiYpeD6kfsut3TuskQ9Q==",
+      "path": "microsoft.aspnetcore.authentication.cookies/2.1.2",
+      "hashPath": "microsoft.aspnetcore.authentication.cookies.2.1.2.nupkg.sha512"
+    },
     "Microsoft.NETCore.App/2.1.0": {
       "type": "package",
       "serviceable": true,
@@ -3205,6 +3257,27 @@
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
     },
+    "Npgsql/4.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sPpinYdH+Jdq9iLFllElQ+J/h3jAnefyUxgBlwc4yz9eBezSYhj64T/u9OlX4cJRXglT3LBkwsFFY78HH4wokw==",
+      "path": "npgsql/4.0.2",
+      "hashPath": "npgsql.4.0.2.nupkg.sha512"
+    },
+    "Npgsql.EntityFrameworkCore.PostgreSQL/2.1.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1DWZCVXYKxl1M8uYH/h0kisItzo5pLsfeIFh6CPBEfAo0rLwErEvcUwiU6aD+w0QtHm8UD9Q46aRyMCUUcy+lQ==",
+      "path": "npgsql.entityframeworkcore.postgresql/2.1.1.1",
+      "hashPath": "npgsql.entityframeworkcore.postgresql.2.1.1.1.nupkg.sha512"
+    },
+    "System.ValueTuple/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xZtSZNEHGa+tGsKuP4sh257vxJ/yemShz4EusmomkynMzuEDDjVaErBNewpzEF6swUgbcrSQAX3ELsEp1zCOwA==",
+      "path": "system.valuetuple/4.5.0",
+      "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "type": "package",
       "serviceable": true,
@@ -3233,26 +3306,12 @@
       "path": "microsoft.aspnetcore.app/2.1.1",
       "hashPath": "microsoft.aspnetcore.app.2.1.1.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Authentication/2.1.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-WgbDLOGoyX0/EoUdAlihMaKIpON6LwCYZ8fiPhZZe+qdCJhvl1aTBmJ/carHcv3NJGT+ETuq2ppYQr7PKLq1CQ==",
-      "path": "microsoft.aspnetcore.authentication/2.1.1",
-      "hashPath": "microsoft.aspnetcore.authentication.2.1.1.nupkg.sha512"
-    },
     "Microsoft.AspNetCore.Authentication.Abstractions/2.1.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-kl1yZmNeUMm9/kWtqoOvIATBavqHPwJICl0FA9rpvNqETqeTgakAbbY25TdG82wKKbjo4LpqZ0YCHwktNPaR2Q==",
       "path": "microsoft.aspnetcore.authentication.abstractions/2.1.1",
       "hashPath": "microsoft.aspnetcore.authentication.abstractions.2.1.1.nupkg.sha512"
-    },
-    "Microsoft.AspNetCore.Authentication.Cookies/2.1.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Yz9dgcZvZ+OJjJ8ZX/+DtgY0+9ZuKzNO0cHkDUdQubY4W4Ozn5e194s70lNQiiEGJjah9hd/5yuayPAePiz7DQ==",
-      "path": "microsoft.aspnetcore.authentication.cookies/2.1.1",
-      "hashPath": "microsoft.aspnetcore.authentication.cookies.2.1.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.Core/2.1.1": {
       "type": "package",
@@ -5045,13 +5104,6 @@
       "sha512": "sha512-OHmbT+Zz065NKII/ZHcH9XO1dEuLGI1L2k7uYss+9C1jLxTC9kTZZuzUOyXHayRk+dft9CiDf3I/QZ0t8JKyBQ==",
       "path": "system.threading.thread/4.3.0",
       "hashPath": "system.threading.thread.4.3.0.nupkg.sha512"
-    },
-    "System.ValueTuple/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-cNLEvBX3d6MMQRZe3SMFNukVbitDAEpVZO17qa0/2FHxZ7Y7PpFRpr6m2615XYM/tYYYf0B+WyHNujqIw8Luwg==",
-      "path": "system.valuetuple/4.3.0",
-      "hashPath": "system.valuetuple.4.3.0.nupkg.sha512"
     },
     "System.Xml.ReaderWriter/4.3.0": {
       "type": "package",
