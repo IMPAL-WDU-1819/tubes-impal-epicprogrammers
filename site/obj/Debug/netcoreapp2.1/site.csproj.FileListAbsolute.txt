@@ -30,3 +30,5 @@
 /home/sigismund/ProjectImpal/site/obj/Debug/netcoreapp2.1/site.dll
 /home/sigismund/ProjectImpal/site/obj/Debug/netcoreapp2.1/site.pdb
 /home/sigismund/ProjectImpal/site/obj/Debug/netcoreapp2.1/site.csproj.CopyComplete
+/home/sigismund/ProjectImpal/site/obj/Debug/netcoreapp2.1/Razor/Views/Home/Logon.g.cshtml.cs
+/home/sigismund/ProjectImpal/site/obj/Debug/netcoreapp2.1/Razor/Views/Consumer/Index.g.cshtml.cs

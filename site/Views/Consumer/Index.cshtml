@@ -1,0 +1,14 @@
+@model Consumer
+
+@using (Html.BeginForm("Post", "Consumer" , FormMethod.Post)) { 
+    @Html.ValidationSummary(true);
+
+     @Html.TextBoxFor(m => m.Email ,new {@class = "form-control",@placeholder="EnterName",@requried="required"})
+     @Html.TextBoxFor(m => m.Username ,new {@class = "form-control",@placeholder="EnterName",@requried="required"})
+     @Html.TextBoxFor(m => m.Pass ,new {@class = "form-control",@placeholder="EnterName",@requried="required"})
+     @Html.TextBoxFor(m => m.Notel ,new {@class = "form-control",@placeholder="EnterName",@requried="required"})
+     @Html.TextBoxFor(m => m.Address ,new {@class = "form-control",@placeholder="EnterName",@requried="required"})
+     @Html.TextBoxFor(m => m.Nama ,new {@class = "form-control",@placeholder="EnterName",@requried="required"})
+    <input type="submit" value="Enter the value" />
+
+}
