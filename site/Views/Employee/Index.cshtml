@@ -1,0 +1,54 @@
+@model List<Job>
+
+<div class="row site-employee-detail">
+    <div class="col-md-3">
+        <h1>Your Latest Task</h1>
+    @if(Model.Count==0)
+    {
+        <h3>There is no task!</h3>
+    }
+    else
+    {
+        <h3>Latest Job: @Model.ElementAt(0).Lastupdated</h3>
+        <p>
+            <ul>
+                <li>Working on: @Model.ElementAt(0).Item.Item2sell.Namamobil</li>
+                <li>Consumer: @Model.ElementAt(0).Item.Email</li>
+            </ul>
+        </p>
+    }
+    </div>
+    <div class="col-md-9">
+        <h1>Last 5 task</h1>
+        <table>
+            <tr>
+                <th>
+                    Job Id
+                </th>
+                <th>
+                    Product
+                </th>
+                <th>
+                    Lastupdated
+                </th>
+                <th>
+                    Detail
+                </th>
+            </tr>
+        @foreach (var item in Model)
+        {
+            
+            <tr>
+                <td>@item.Jobid</td>
+                <td>@item.Item.Item2sell.Namamobil</td>
+                <td>@item.Lastupdated</td>
+                <td><a href="/Employee/DetailedOrder/@item.Jobid">See detail</a></td>
+            </tr>
+            
+        }
+        </table>
+        <button onclick="window.location.href='/Employee/Order'">
+            Show all order
+        </button>
+    </div>
+</div>

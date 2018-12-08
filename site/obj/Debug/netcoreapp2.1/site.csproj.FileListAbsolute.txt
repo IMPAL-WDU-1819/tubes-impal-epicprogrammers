@@ -32,3 +32,17 @@
 /home/sigismund/ProjectImpal/site/obj/Debug/netcoreapp2.1/site.csproj.CopyComplete
 /home/sigismund/ProjectImpal/site/obj/Debug/netcoreapp2.1/Razor/Views/Home/Logon.g.cshtml.cs
 /home/sigismund/ProjectImpal/site/obj/Debug/netcoreapp2.1/Razor/Views/Consumer/Index.g.cshtml.cs
+/home/sigismund/ProjectImpal/site/obj/Debug/netcoreapp2.1/Razor/Views/Login/SignUp.g.cshtml.cs
+/home/sigismund/ProjectImpal/site/obj/Debug/netcoreapp2.1/Razor/Views/Login/Login.g.cshtml.cs
+/home/sigismund/ProjectImpal/site/obj/Debug/netcoreapp2.1/Razor/Views/LoginEmployee/Login.g.cshtml.cs
+/home/sigismund/ProjectImpal/site/obj/Debug/netcoreapp2.1/Razor/Views/LoginEmployee/SignUp.g.cshtml.cs
+/home/sigismund/ProjectImpal/site/obj/Debug/netcoreapp2.1/Razor/Views/Shop/Index.g.cshtml.cs
+/home/sigismund/ProjectImpal/site/obj/Debug/netcoreapp2.1/Razor/Views/Shop/Buy.g.cshtml.cs
+/home/sigismund/ProjectImpal/site/obj/Debug/netcoreapp2.1/Razor/Views/Shop/BuyList.g.cshtml.cs
+/home/sigismund/ProjectImpal/site/obj/Debug/netcoreapp2.1/Razor/Views/Shop/Pick.g.cshtml.cs
+/home/sigismund/ProjectImpal/site/obj/Debug/netcoreapp2.1/Razor/Views/Employee/Index.g.cshtml.cs
+/home/sigismund/ProjectImpal/site/obj/Debug/netcoreapp2.1/Razor/Views/Employee/Order.g.cshtml.cs
+/home/sigismund/ProjectImpal/site/obj/Debug/netcoreapp2.1/Razor/Views/Employee/Part.g.cshtml.cs
+/home/sigismund/ProjectImpal/site/obj/Debug/netcoreapp2.1/Razor/Views/Employee/PartBuy.g.cshtml.cs
+/home/sigismund/ProjectImpal/site/obj/Debug/netcoreapp2.1/Razor/Views/Employee/DetailedOrder.g.cshtml.cs
+/home/sigismund/ProjectImpal/site/obj/Debug/netcoreapp2.1/Razor/Views/Shop/Progress.g.cshtml.cs

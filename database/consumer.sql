@@ -5,13 +5,13 @@
 --  
 
 CREATE TABLE Consumer (
-  Email string NOT NULL ,
-  username string NOT NULL ,
+  Email character varying(200) NOT NULL ,
+  username character varying(200) NOT NULL ,
   notel numeric NOT NULL ,
-  address string NOT NULL ,
-  nama string NOT NULL ,
-  pass string NOT NULL 
+  address character varying(500) NOT NULL ,
+  nama character varying(200) NOT NULL ,
+  pass character varying(200) NOT NULL 
 );
 
 -- 
-ALTER TABLE Consumer ADD CONSTRAINT new_unique_constraint PRIMARY KEY (Email);
+ALTER TABLE Consumer ADD CONSTRAINT consumer_email PRIMARY KEY (Email);

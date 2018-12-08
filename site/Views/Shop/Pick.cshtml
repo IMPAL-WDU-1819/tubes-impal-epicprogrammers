@@ -1,0 +1,17 @@
+@model Item2sell;
+
+<div class="row site-shop-detail">
+    <div class="row">
+        <h1>@Model.Namamobil</h1>
+    </div>
+    <div class="row">
+        <div class="md-col-4">
+            <img src="@Model.Imgurl" class="img-responsive"/>
+        </div>
+        <div class="md-col-8">
+            <h3>Rp. @Model.Harga</h3>
+            <p>@Model.Description</p>
+            <button onclick="window.location.href='/Shop/Buy/@Model.Item2sellno'">Buy</button>
+        </div>
+    </div>
+</div>

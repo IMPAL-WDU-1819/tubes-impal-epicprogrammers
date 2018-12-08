@@ -3,8 +3,48 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background: rgb(46, 46, 46);
 }
 
+*
+{
+    
+}
+
+
+.site-body
+{
+    background:white;
+    box-shadow: 0px 0px 100px black;
+}
+
+.site-shop-index
+{
+    padding: 20px;
+    transform: translate(5%, 0%);
+}
+
+.site-shop-detail
+{
+    margin:50px;
+}
+
+.site-employee-detail
+{
+    margin:50px;
+}
+
+.site-thumb
+{
+    margin:20px;
+    box-shadow: 0px 0px 10px #202020;
+    transition: 0.5s;
+}
+
+.site-thumb:hover
+{
+    box-shadow: 0px 0px 20px black;
+}
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {

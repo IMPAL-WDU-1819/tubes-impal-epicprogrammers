@@ -1,0 +1,28 @@
+@model List<Item2sell>
+<div class="container-fluid center-block site-shop-index ">
+    @foreach (var row in Model)
+    {
+    <div class="col-md-3 site-thumb" >
+        <div>
+            <div class="row">
+                <img src="@row.Imgurl" class="img-responsive"/>            
+            </div>
+            <div style="padding:20px;">
+                <div class="row">
+                    <h3>@row.Namamobil</h3>
+                </div>
+                <div class="row">
+                    <p>@row.Description</p>
+                </div>
+                <div class="row">
+                    <button onclick="window.location.href='/Shop/Pick/@row.Item2sellno'">Detail</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+
+        
+        
+
+</div>

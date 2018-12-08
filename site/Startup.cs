@@ -41,7 +41,7 @@ namespace site
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             
             //services.Configure<WebsiteConfig>(Configuration.GetSection("Connection"));
-            
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddDbContext<DbContext>( options =>
                 options.UseNpgsql(Configuration["ConnectionString"])

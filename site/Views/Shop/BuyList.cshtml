@@ -1,0 +1,51 @@
+@model List<Item>
+<div>
+    <table>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Nama
+            </th>
+            <th>
+                Harga
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                Remove
+            </th>
+        </tr>
+        <tbody>
+@foreach (var row in Model)
+{
+            <tr>
+                <td>@row.Itemno</td>
+                <td>@row.Item2sell.Namamobil</td>
+                <td>@row.Item2sell.Harga</td>
+                <td>@row.Description</td>
+                <td>
+                    @if(row.Description==Globals.STR_ORDER_PLACED)
+                    {
+                        <button onclick="window.location.href='/Shop/RemoveList/@row.Itemno'">
+                        Cancel Order
+                        </button>
+                    }
+                    else
+                    {
+                        <button disabled="disabled">You can't cancel this!</button>
+                        <button onclick="window.location.href='/Shop/Progress/@row.Itemno'">Show progress detail</button>
+                    }
+                </td>
+            </tr>
+}
+        </tbody>
+    </table>
+    <form>
+        <button>
+        Clear
+        </button>    
+    </form>
+</div>

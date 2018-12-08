@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using site.Models;
 
 namespace site
 {
@@ -19,10 +18,10 @@ namespace site
         public virtual DbSet<Consumer> Consumer { get; set; }
         public virtual DbSet<Employee> Employee { get; set; }
         public virtual DbSet<Item> Item { get; set; }
+        public virtual DbSet<Item2sell> Item2sell { get; set; }
         public virtual DbSet<Job> Job { get; set; }
         public virtual DbSet<Part> Part { get; set; }
         public virtual DbSet<Part2item> Part2item { get; set; }
-        public virtual DbSet<Tipemobil> Tipemobil { get; set; }
         public virtual DbSet<User2item> User2item { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -30,8 +29,7 @@ namespace site
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                //optionsBuilder.UseNpgsql("Host=localhost;Database=tesla;Username=postgres;Password=password");
-                optionsBuilder.UseNpgsql(WebsiteConfig.ConnectionString);
+                optionsBuilder.UseNpgsql("Host=localhost;Database=tesla;Username=postgres;Password=password");
             }
         }
 
@@ -117,33 +115,68 @@ namespace site
 
                 entity.Property(e => e.Itemno).HasColumnName("itemno");
 
-                entity.Property(e => e.Harga).HasColumnName("harga");
+                entity.Property(e => e.Description)
+                    .HasColumnName("description")
+                    .HasMaxLength(500);
+
+                entity.Property(e => e.Email)
+                    .HasColumnName("email")
+                    .HasMaxLength(200);
+
+                entity.Property(e => e.Imgurl)
+                    .HasColumnName("imgurl")
+                    .HasMaxLength(500);
+
+                entity.Property(e => e.Item2sellno).HasColumnName("item2sellno");
 
                 entity.Property(e => e.Jobid).HasColumnName("jobid");
 
-                entity.Property(e => e.Namamobil)
-                    .IsRequired()
-                    .HasColumnName("namamobil")
-                    .HasMaxLength(200);
+                entity.HasOne(d => d.EmailNavigation)
+                    .WithMany(p => p.Item)
+                    .HasForeignKey(d => d.Email)
+                    .HasConstraintName("item_consumer_fk");
 
-                entity.Property(e => e.Tipeno).HasColumnName("tipeno");
-
-                entity.Property(e => e.Warna)
-                    .IsRequired()
-                    .HasColumnName("warna")
-                    .HasMaxLength(200);
+                entity.HasOne(d => d.Item2sell)
+                    .WithMany(p => p.Item)
+                    .HasForeignKey(d => d.Item2sellno)
+                    .HasConstraintName("item_item2sell_fk");
 
                 entity.HasOne(d => d.Job)
-                    .WithMany(p => p.Item)
-                    .HasForeignKey(d => d.Jobid)
+                    .WithOne(p => p.Item)
+                    .HasForeignKey<Item>(d => d.Jobid)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fkey_jobid_job");
+            });
 
-                entity.HasOne(d => d.TipenoNavigation)
-                    .WithMany(p => p.Item)
-                    .HasForeignKey(d => d.Tipeno)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fkey_tipeno_tipemobil");
+            modelBuilder.Entity<Item2sell>(entity =>
+            {
+                entity.HasKey(e => e.Item2sellno);
+
+                entity.ToTable("item2sell");
+
+                entity.Property(e => e.Item2sellno)
+                    .HasColumnName("item2sellno")
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Description)
+                    .HasColumnName("description")
+                    .HasColumnType("character varying");
+
+                entity.Property(e => e.Harga)
+                    .HasColumnName("harga")
+                    .HasColumnType("character varying");
+
+                entity.Property(e => e.Imgurl)
+                    .HasColumnName("imgurl")
+                    .HasColumnType("character varying");
+
+                entity.Property(e => e.Namamobil)
+                    .HasColumnName("namamobil")
+                    .HasColumnType("character varying");
+
+                entity.Property(e => e.Warna)
+                    .HasColumnName("warna")
+                    .HasColumnType("character varying");
             });
 
             modelBuilder.Entity<Job>(entity =>
@@ -203,31 +236,17 @@ namespace site
 
                 entity.Property(e => e.Itemnopart).HasColumnName("itemnopart");
 
-                entity.HasOne(d => d.ItemnoitemNavigation)
+                entity.HasOne(d => d.Item2sellNavigation)
                     .WithMany(p => p.Part2item)
                     .HasForeignKey(d => d.Itemnoitem)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fkey_itemno_item");
+                    .HasConstraintName("part2item_item2sell_fk");
 
-                entity.HasOne(d => d.ItemnopartNavigation)
+                entity.HasOne(d => d.Part)
                     .WithMany(p => p.Part2item)
                     .HasForeignKey(d => d.Itemnopart)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fkey_itemno_part");
-            });
-
-            modelBuilder.Entity<Tipemobil>(entity =>
-            {
-                entity.HasKey(e => e.Tipeno);
-
-                entity.ToTable("tipemobil");
-
-                entity.Property(e => e.Tipeno).HasColumnName("tipeno");
-
-                entity.Property(e => e.Tipe)
-                    .IsRequired()
-                    .HasColumnName("tipe")
-                    .HasMaxLength(200);
+                    .HasConstraintName("part2item_part_fk");
             });
 
             modelBuilder.Entity<User2item>(entity =>

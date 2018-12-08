@@ -15,6 +15,7 @@ namespace site.Controllers
 
         string GenerateRandomString()
         {
+            
             var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             var stringChars = new char[8];
             var random = new Random();

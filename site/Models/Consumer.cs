@@ -7,6 +7,7 @@ namespace site
     {
         public Consumer()
         {
+            Item = new HashSet<Item>();
             User2item = new HashSet<User2item>();
         }
 
@@ -17,6 +18,7 @@ namespace site
         public string Nama { get; set; }
         public string Pass { get; set; }
 
+        public ICollection<Item> Item { get; set; }
         public ICollection<User2item> User2item { get; set; }
     }
 }

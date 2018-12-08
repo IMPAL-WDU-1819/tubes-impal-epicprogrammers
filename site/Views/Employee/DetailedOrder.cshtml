@@ -1,0 +1,50 @@
+@model JobPartViewModel;
+<div class="row site-employee-detail">
+    <h1>@Model.Job.Jobid</h1>
+    <h3>@Model.Job.Item.Item2sell.Namamobil</h3>
+    <p>
+        <ul>
+            <li>Ordered at: @Model.Job.Lastupdated</li>
+            <li>Assigned to: @Model.Job.Employeeemail</li>
+        </ul>
+        <div>
+            <h4>Required part</h4>
+            <table>
+                <tr>
+                    <th>Part No</th>
+                    <th>Part Name</th>
+                    <th>Price in IDR</th>
+                    <th>Availibilty</th>
+                </tr>
+                @foreach (var item in Model.Parts)
+                {
+                    <tr>
+                        <td>@item.Part.Itemno</td>
+                        <td>@item.Part.Namapart</td>
+                        <td>@item.Part.Harga</td>
+                        <td>@item.Part.Qty</td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div>
+            <div>
+@using (Html.BeginForm("ProgressUpdate", "Employee" , FormMethod.Post, new { @onsubmit="return OnSubmitForm(event)" })) {                 
+                <h4>Progress Update</h4>
+                <hr />
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" });
+                <div class="form-group">
+                    <label asp-for="Job.Progress"></label>
+                    <input type="hidden" asp-for="Job.Jobid" value="@Model.Job.Jobid" />
+                    <textarea asp-for="Job.Progress" class="form-control"></textarea>
+                    <span asp-validation-for="Job.Progress" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button id="" type="submit" class="btn btn-default">Submit</button>
+                </div>
+                }
+            </div>
+        </div>
+    </p>
+
+</div>

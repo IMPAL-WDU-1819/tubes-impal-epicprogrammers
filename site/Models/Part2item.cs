@@ -9,7 +9,7 @@ namespace site
         public int Itemnoitem { get; set; }
         public int Itemnopart { get; set; }
 
-        public Item ItemnoitemNavigation { get; set; }
-        public Part ItemnopartNavigation { get; set; }
+        public Item2sell Item2sellNavigation { get; set; }
+        public Part Part { get; set; }
     }
 }

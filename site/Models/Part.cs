@@ -9,7 +9,7 @@ namespace site
         {
             Part2item = new HashSet<Part2item>();
         }
-
+        
         public int Itemno { get; set; }
         public string Namapart { get; set; }
         public double Harga { get; set; }

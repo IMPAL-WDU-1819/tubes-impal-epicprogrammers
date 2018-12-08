@@ -1,6 +1,6 @@
 @model Consumer
 
-@using (Html.BeginForm("Post", "Consumer" , FormMethod.Post)) { 
+@using (Html.BeginForm("SignUp", "Login" , FormMethod.Post)) { 
     @Html.ValidationSummary(true);
 
      @Html.TextBoxFor(m => m.Email ,new {@class = "form-control",@placeholder="EnterName",@requried="required"})
