@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" http-equiv="Content-Type" content="width=device-width, initial-scale=1, text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>Tesla Motors</title>
+<style>
+    .table1 {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even){background-color: #f2f2f2}
+    .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    }
+
+    .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+    }
+
+    .tab button:hover {
+        background-color: #ddd;
+    }
+
+    .tab button.active {
+        background-color: #ccc;
+    }
+
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
+    .th1  {
+        width: 25%;
+    }
+    .th2  {
+        width: 100%;
+    }
+    .th3  {
+        width: 75%;
+    }
+    .th4  {
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+<div id="container">
+        <div id="mainpic">
+            <table>
+                <tr>    
+                <h1 style="margin-right: 100px; background-color: #1E4297; text-align: left; background-blend-mode: 10px; color: #E1E7F7; border-radius: 5px; opacity: 0,5px;">Sistem Informasi PT. Tesla Indonesia</h1>
+                </tr>
+            </table>    
+        </div>   
+
+        <div id="menu">
+            <ul>
+                <li class="menuitem"><a href="#">Home</a></li>
+                <li class="menuitem"><a href="#">Pengguna</a></li>
+                <li class="menuitem"><a href="#">Pegawai</a></li>
+                <li class="menuitem"><a href="#">List Barang</a></li>
+            </ul>
+        </div>
+
+        <div class="tab">
+          <button class="tablinks" onclick="openStuff(event, 'Sparepart')">Sparepart</button>
+          <button class="tablinks" onclick="openStuff(event, 'Mobil')">Mobil</button>
+        </div>
+
+        <div id="Sparepart" class="tabcontent" style="padding-right: 500px; text-align: center;">
+          <div id="content">
+            <div>
+              <table id="table1">
+                <tr>
+                  <th id="th1">No.</th>
+                  <th id="th2">Nama</th>
+                  <th id="th3">Stok</th>
+                  <th id="th4">Harga</th>
+                </tr>
+                <tr>
+                  <td>xxxxxxxx</td>
+                  <td>xxxxxxxx</td>
+                  <td>xxxxxxxx</td>
+                  <td>xxxxxxxx</td>
+                </tr>
+                <tr>
+                  <td>xxxxxxxx</td>
+                  <td>xxxxxxxx</td>
+                  <td>xxxxxxxx</td>
+                  <td>xxxxxxxx</td>
+                </tr>
+                <tr>
+                  <td>xxxxxxxx</td>
+                  <td>xxxxxxxx</td>
+                  <td>xxxxxxxx</td>
+                  <td>xxxxxxxx</td>
+                </tr>
+              </table>
+            </div>
+            <br>
+            <br>   
+        </div>
+
+        <div id="Mobil" class="tabcontent" style="text-align: center;">
+          <div id="content">
+            <div>
+              <table id="table1">
+                <tr>
+                  <th id="th1">No.</th>
+                  <th id="th2">Nama</th>
+                  <th id="th3">Stok</th>
+                  <th id="th4">Harga</th>
+                </tr>
+                 <tr>
+                  <td>xxxxxxxx</td>
+                  <td>xxxxxxxx</td>
+                  <td>xxxxxxxx</td>
+                  <td>xxxxxxxx</td>
+                </tr>
+                <tr>
+                  <td>xxxxxxxx</td>
+                  <td>xxxxxxxx</td>
+                  <td>xxxxxxxx</td>
+                  <td>xxxxxxxx</td>
+                </tr>
+                <tr>
+                  <td>xxxxxxxx</td>
+                  <td>xxxxxxxx</td>
+                  <td>xxxxxxxx</td>
+                  <td>xxxxxxxx</td>
+                </tr>
+              </table>
+            </div>
+            <br>
+            <br>   
+          </div>
+        </div>
+      </div>  
+      <div id="footer" style="color: #FFFFFF; padding-left:425px; margin: 3% 0% 0% 3%;"><h4>Tesla Motors 2018</h4></div>
+   </div>
+   <script>
+    function openStuff(evt, stuffName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(stuffName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    </script>
+  
+
+</body>
+</html>
