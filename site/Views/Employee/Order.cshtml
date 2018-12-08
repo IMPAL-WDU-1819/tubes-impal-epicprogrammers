@@ -1,0 +1,37 @@
+@model List<Job>
+
+<div class="row site-employee-detail">
+    <div class="row">
+        <h1>All task</h1>
+        <table>
+            <tr>
+                <th>
+                    Job Id
+                </th>
+                <th>
+                    Product
+                </th>
+                <th>
+                    Lastupdated
+                </th>
+                <th>
+                    Detail
+                </th>
+            </tr>
+        @foreach (var item in Model)
+        {
+            
+            <tr>
+                <td>@item.Jobid</td>
+                <td>@item.Item.Item2sell.Namamobil</td>
+                <td>@item.Lastupdated</td>
+                <td><a href="/Employee/DetailedOrder/@item.Jobid">See detail</a></td>
+            </tr>
+            
+        }
+        </table>
+        <button onclick="window.location.href='/Employee/Index'">
+            Go Back
+        </button>
+    </div>
+</div>

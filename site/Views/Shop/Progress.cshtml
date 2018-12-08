@@ -4,7 +4,7 @@
     <h3>@Model.JobItem.Item2sell.Namamobil</h3>
     <p>
         <ul>
-            <li>Ordered at: @Model.Job.Lastupdated</li>
+            <li>Last updated at: @Model.Job.Lastupdated</li>
         </ul>
         <a href="emailto:@Model.Job.Employeeemail">Contact Developers</a>
         <h3>Last progress news from developers: </h3>
@@ -15,5 +15,8 @@
     </p>
     <button onclick="window.history.back()">
         Go back
+    </button>
+    <button onclick="window.location.href='/Shop/Pick/@Model.JobItem.Item2sellno'">
+        Go to Car show room
     </button>
 </div>

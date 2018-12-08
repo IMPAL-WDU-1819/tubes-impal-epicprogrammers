@@ -43,6 +43,27 @@ namespace site.Controllers
             return View(recent5Jobs.ToList());
         }
 
+        public IActionResult Order()
+        {
+            if(!LoggedIn())
+                return Redirect("/LoginEmployee/Login");
+                var db = new teslaContext();
+            var Jobs = db.Job.OrderBy(x=> x.Lastupdated)
+                            .Where(x=> x.Employeeemail == UserId())
+                            .ToList();
+            var items = db.Item.ToList();
+            var itemToSell = db.Item2sell.ToList();
+            //eager loading
+
+            
+            foreach(var job in Jobs)
+            {
+                 job.Item = items.Where(x=> x.Jobid == job.Jobid).First();
+                 job.Item.Item2sell = itemToSell.Where(x=> x.Item2sellno == job.Item.Item2sellno).First();    
+            }   
+            return View(Jobs);
+        }
+
         public IActionResult DetailedOrder(string id)
         {
             if(!LoggedIn()) 
